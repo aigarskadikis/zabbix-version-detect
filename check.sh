@@ -242,7 +242,7 @@ echo $url
 filename=$(echo $url | sed "s/^.*\///g")
 
 #download file
-wget $url -O $tmp/$filename
+wget $url -O $tmp/$filename -q
 
 echo creating sha1 checksum of file..
 sha1=$(sha1sum $tmp/$filename | sed "s/\s.*//g")
