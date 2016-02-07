@@ -236,6 +236,8 @@ echo $version version is new!
 
 url=$(echo http://downloads.sourceforge.net/project/zabbix/ZABBIX%20Latest%20Stable/`echo $version`/zabbix-`echo $version`.tar.gz)
 
+echo $url
+
 #calculate filename
 filename=$(echo $url | sed "s/^.*\///g")
 
