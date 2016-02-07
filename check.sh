@@ -242,7 +242,7 @@ echo $url
 filename=$(echo $url | sed "s/^.*\///g")
 
 #download file
-wget $url -O $tmp/$filename -q
+wget $url -O $tmp/$filename
 
 echo creating sha1 checksum of file..
 sha1=$(sha1sum $tmp/$filename | sed "s/\s.*//g")
@@ -258,7 +258,7 @@ echo "$version">> $db
 emails=$(cat ../posting | sed '$aend of file')
 printf %s "$emails" | while IFS= read -r onemail
 do {
-python ../send-email.py "$onemail" "$filename" "$url
+python ../send-email.py "$onemail" "$filename" "$url 
 $md5
 $sha1"
 } done
